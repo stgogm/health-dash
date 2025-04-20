@@ -4,7 +4,7 @@ export class AppointmentDto {
   id!: string
   patientId!: string
   doctorId!: string
-  scheduledAt!: Date
+  scheduledAt!: string
   status!: AppointmentStatus
   doctorNotes!: string
   createdAt!: string

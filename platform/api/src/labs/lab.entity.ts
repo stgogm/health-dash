@@ -1,11 +1,12 @@
 import {
-  Entity,
   PrimaryGeneratedColumn,
-  Column,
-  ManyToOne,
-  Relation,
   CreateDateColumn,
   UpdateDateColumn,
+  ManyToOne,
+  Relation,
+  Entity,
+  Column,
+  Index,
 } from 'typeorm'
 import { LabDto, LabStatus } from '@common/types'
 
@@ -21,14 +22,14 @@ export class Lab
   @Column()
   name!: string
 
-  @Column({ type: 'date' })
-  orderedAt!: Date
-
   @Column({ nullable: true })
   result!: string
 
-  @Column({ default: 'pending' })
+  @Column({ default: 'pending' as LabStatus })
   status!: LabStatus
+
+  @Column()
+  orderedAt!: Date
 
   @CreateDateColumn()
   createdAt!: Date
@@ -36,6 +37,7 @@ export class Lab
   @UpdateDateColumn()
   updatedAt!: Date
 
+  @Index()
   @ManyToOne(() => Patient, (patient) => patient.labs)
   patient!: Relation<Patient>
 }

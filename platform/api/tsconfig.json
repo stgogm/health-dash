@@ -6,7 +6,6 @@
     "outDir": "./dist",
     "module": "NodeNext",
     "target": "ESNext",
-    "baseUrl": ".",
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,

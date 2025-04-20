@@ -13,7 +13,9 @@ import { Appointment } from '../appointments/appointment.entity'
 import { Lab } from '../labs/lab.entity'
 
 @Entity('patients')
-export class Patient implements Omit<PatientDto, 'createdAt' | 'updatedAt'> {
+export class Patient
+  implements Omit<PatientDto, 'createdAt' | 'updatedAt' | 'birthDate'>
+{
   @PrimaryGeneratedColumn('uuid')
   id!: string
 
@@ -23,8 +25,8 @@ export class Patient implements Omit<PatientDto, 'createdAt' | 'updatedAt'> {
   @Column()
   lastName!: string
 
-  @Column({ type: 'date' })
-  birthDate!: string
+  @Column()
+  birthDate!: Date
 
   @Column()
   sex!: PatientSex

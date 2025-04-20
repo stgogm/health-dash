@@ -7,6 +7,7 @@ import {
   Relation,
   Column,
   Entity,
+  Index,
 } from 'typeorm'
 
 import { Patient } from '../patients/patient.entity'
@@ -15,15 +16,18 @@ import { Doctor } from '../doctors/doctor.entity'
 @Entity('appointments')
 export class Appointment
   implements
-    Omit<AppointmentDto, 'patientId' | 'doctorId' | 'createdAt' | 'updatedAt'>
+    Omit<
+      AppointmentDto,
+      'patientId' | 'doctorId' | 'createdAt' | 'updatedAt' | 'scheduledAt'
+    >
 {
   @PrimaryGeneratedColumn('uuid')
   id!: string
 
-  @Column({ type: 'timestamp' })
+  @Column()
   scheduledAt!: Date
 
-  @Column({ default: 'scheduled' })
+  @Column({ default: 'scheduled' as AppointmentStatus })
   status!: AppointmentStatus
 
   @Column({ nullable: true })
@@ -35,9 +39,11 @@ export class Appointment
   @UpdateDateColumn()
   updatedAt!: Date
 
+  @Index()
   @ManyToOne(() => Patient, (patient) => patient.appointments)
   patient!: Relation<Patient>
 
+  @Index()
   @ManyToOne(() => Doctor, (doctor) => doctor.appointments)
   doctor!: Relation<Doctor>
 }

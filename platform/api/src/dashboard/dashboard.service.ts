@@ -5,7 +5,7 @@ import {
   RecentAppointmentDto,
   DashboardSummaryDto,
   AppointmentStatus,
-  AppointmentStats,
+  AppointmentsStats,
 } from '@common/types'
 
 import { Appointment } from '../appointments/appointment.entity'
@@ -33,7 +33,7 @@ export class DashboardService {
       .groupBy('a.status')
       .getRawMany<{ status: AppointmentStatus; count: number }>()
 
-    const appointmentsStats: AppointmentStats = {
+    const appointmentsStats: AppointmentsStats = {
       scheduled: 0,
       completed: 0,
       cancelled: 0,
