@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "module": "ESNext",
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@health/shared": ["packages/shared"]
+    }
+  }
+}

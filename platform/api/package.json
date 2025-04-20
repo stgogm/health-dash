@@ -1,0 +1,42 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "NestJS+PostgreSQL Practice",
+  "main": "dist/src/main",
+  "author": "@stgogm",
+  "license": "ISC",
+  "keywords": [],
+  "scripts": {
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/jest/bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.0.20",
+    "@nestjs/core": "^11.0.20",
+    "@nestjs/platform-express": "^11.0.20",
+    "@nestjs/typeorm": "^11.0.0",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.22"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.6",
+    "@nestjs/schematics": "^11.0.5",
+    "@nestjs/testing": "^11.0.20",
+    "@swc/cli": "^0.7.3",
+    "@swc/core": "^1.11.21",
+    "@swc/jest": "^0.2.37",
+    "@types/node": "^22.14.1",
+    "jest": "^29.7.0",
+    "typescript": "^5.8.3"
+  }
+}

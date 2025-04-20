@@ -6,7 +6,11 @@ settings:
 
 importers:
 
-  .:
+  .: {}
+
+  packages/shared: {}
+
+  platform/api:
     dependencies:
       '@nestjs/common':
         specifier: ^11.0.20

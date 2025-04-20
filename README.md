@@ -1,2 +1,3 @@
-# nestjs-practice
-NestJs Practice Repo
+# nestjs-postgresql-react-practice
+
+NestJS+PostgreSQL+React Practice Repo
