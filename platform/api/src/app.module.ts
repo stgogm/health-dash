@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm'
 import { Module } from '@nestjs/common'
 
 import { AppointmentsModule } from './appointments/appointments.module'
+import { DashboardModule } from './dashboard/dashboard.module'
 import { PatientsModule } from './patients/patients.module'
 import { DoctorsModule } from './doctors/doctors.module'
 import { LabsModule } from './labs/labs.module'
@@ -25,6 +26,7 @@ import { LabsModule } from './labs/labs.module'
       }),
     }),
     AppointmentsModule,
+    DashboardModule,
     PatientsModule,
     DoctorsModule,
     LabsModule,

@@ -1,10 +1,19 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, Relation } from 'typeorm'
+import { PatientDto, PatientSex } from '@common/types'
+import {
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  OneToMany,
+  Relation,
+  Entity,
+  Column,
+} from 'typeorm'
 
 import { Appointment } from '../appointments/appointment.entity'
 import { Lab } from '../labs/lab.entity'
 
-@Entity()
-export class Patient {
+@Entity('patients')
+export class Patient implements Omit<PatientDto, 'createdAt' | 'updatedAt'> {
   @PrimaryGeneratedColumn('uuid')
   id!: string
 
@@ -18,10 +27,13 @@ export class Patient {
   birthDate!: string
 
   @Column()
-  gender!: string
+  sex!: PatientSex
 
-  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  @CreateDateColumn()
   createdAt!: Date
+
+  @UpdateDateColumn()
+  updatedAt!: Date
 
   @OneToMany(() => Appointment, (appointment) => appointment.patient)
   appointments!: Relation<Appointment>[]

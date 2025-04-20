@@ -1,4 +1,6 @@
 {
+  "extends": "../../tsconfig.base.json",
+  "include": ["src"],
   "compilerOptions": {
     "moduleResolution": "nodenext",
     "outDir": "./dist",
@@ -11,9 +13,6 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "sourceMap": true,
-    "strict": true,
-    "paths": {
-      "@health/shared": ["packages/shared"]
-    }
+    "strict": true
   }
 }

@@ -1,9 +1,18 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, Relation } from 'typeorm'
+import { DoctorDto } from '@common/types'
+import {
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  OneToMany,
+  Relation,
+  Column,
+  Entity,
+} from 'typeorm'
 
 import { Appointment } from '../appointments/appointment.entity'
 
-@Entity()
-export class Doctor {
+@Entity('doctors')
+export class Doctor implements Omit<DoctorDto, 'createdAt' | 'updatedAt'> {
   @PrimaryGeneratedColumn('uuid')
   id!: string
 
@@ -18,6 +27,12 @@ export class Doctor {
 
   @Column({ default: true })
   active!: boolean
+
+  @CreateDateColumn()
+  createdAt!: Date
+
+  @UpdateDateColumn()
+  updatedAt!: Date
 
   @OneToMany(() => Appointment, (appointment) => appointment.doctor)
   appointments!: Relation<Appointment>[]
