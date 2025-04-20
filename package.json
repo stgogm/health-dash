@@ -1,14 +1,14 @@
 {
-  "name": "nestjs-prisma-react-practice",
-  "homepage": "https://github.com/stgogm/nestjs-practice#readme",
+  "name": "health-dashboard",
+  "homepage": "https://github.com/stgogm/health-dashboard#readme",
   "private": true,
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stgogm/nestjs-practice.git"
+    "url": "git+https://github.com/stgogm/health-dashboard.git"
   },
   "bugs": {
-    "url": "https://github.com/stgogm/nestjs-practice/issues"
+    "url": "https://github.com/stgogm/health-dashboard/issues"
   },
   "engines": {
     "pnpm": ">=10.0.0",
