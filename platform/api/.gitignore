@@ -1,0 +1,36 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+.build/
+
+# SWC cache
+.swc/
+
+# Optional production build artifacts
+*.log
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.*.local
+
+# Editor folders
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Jest
+coverage/
+jest-cache/
+.jest/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# pnpm
+pnpm-lock.yaml
+.pnpm-debug.log

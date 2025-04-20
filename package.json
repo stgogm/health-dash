@@ -14,10 +14,6 @@
     "pnpm": ">=10.0.0",
     "node": ">=20.0.0"
   },
-  "workspaces": [
-    "platform/*",
-    "packages/*"
-  ],
   "scripts": {
     "dev:api": "pnpm --filter api dev",
     "dev:web": "pnpm --filter web dev"

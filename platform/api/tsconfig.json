@@ -1,7 +1,17 @@
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "sourceMap": true,
+    "moduleResolution": "Node",
     "outDir": "./dist",
+    "target": "ESNext",
+    "module": "ESNext",
+    "baseUrl": ".",
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "paths": {
+      "@health/shared": ["packages/shared"]
+    }
   }
 }
