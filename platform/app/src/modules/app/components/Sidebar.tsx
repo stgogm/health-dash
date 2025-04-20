@@ -12,7 +12,7 @@ export const Sidebar = () => (
       Welcome!
     </Text>
     <Stack align="start">
-      <Button variant="ghost" w="full" justifyContent="start">
+      <Button variant="ghost" w="full" justifyContent="start" colorPalette="blue">
         <Icon size="sm">
           <LayoutDashboardIcon />
         </Icon>

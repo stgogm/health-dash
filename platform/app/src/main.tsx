@@ -3,7 +3,7 @@ import { ThemeProvider } from '@emotion/react'
 import { createRoot } from 'react-dom/client'
 import { StrictMode } from 'react'
 
-import App from './App.tsx'
+import App from './modules/app/App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

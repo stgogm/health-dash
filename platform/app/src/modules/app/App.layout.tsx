@@ -1,14 +1,11 @@
 import { Box, Flex } from '@chakra-ui/react'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
+
 
 import { Sidebar } from './components/Sidebar'
 import { Topbar } from './components/Topbar'
 
-interface Props {
-  children: ReactNode
-}
-
-export const DashboardLayout = ({ children }: Props) => (
+export const AppLayout = ({ children }: { children: ReactNode }) => (
   <Flex h="100vh" bg="gray.50">
     <Sidebar />
     <Box flex="1" display="flex" flexDirection="column">

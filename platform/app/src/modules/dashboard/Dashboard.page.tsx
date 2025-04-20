@@ -13,7 +13,6 @@ import {
 import { RecentAppointmentsList } from './components/RecentAppointmentsList'
 import { AppointmentsStatsCard } from './components/AppointmentsStatsCard'
 import { UsersCountCard } from './components/UsersCountCard'
-import { DashboardLayout } from './Dashboard.layout'
 
 const apiUrl = import.meta.env.VITE_API_URL
 
@@ -25,46 +24,42 @@ export const DashboardPage = () => {
 
   if (isLoading) {
     return (
-      <DashboardLayout>
-        <Box pos="absolute" inset="0" bg="bg/80">
-          <Center h="full">
-            <Spinner size="xl" />
-          </Center>
-        </Box>
-      </DashboardLayout>
+      <Box pos="absolute" inset="0" bg="bg/80">
+        <Center h="full">
+          <Spinner size="xl" />
+        </Center>
+      </Box>
     )
   }
 
   if (error) {
     return (
-      <DashboardLayout>
-        <Alert.Root status="error">
-          <Alert.Indicator />
-          <Alert.Content>
-            <Alert.Title>Failed to load dashboard data.</Alert.Title>
-            <Alert.Description>{error.message}</Alert.Description>
-          </Alert.Content>
-        </Alert.Root>
-      </DashboardLayout>
+      <Alert.Root status="error">
+        <Alert.Indicator />
+        <Alert.Content>
+          <Alert.Title>Failed to load dashboard data.</Alert.Title>
+          <Alert.Description>{error.message}</Alert.Description>
+        </Alert.Content>
+      </Alert.Root>
     )
   }
 
   if (!data) {
     return (
-      <DashboardLayout>
-        <Alert.Root status="info">
-          <Alert.Indicator />
-          <Alert.Content>
-            <Alert.Title>There's no data available.</Alert.Title>
-            <Alert.Description>Start using the app to generate data to see the main stats here.</Alert.Description>
-          </Alert.Content>
-        </Alert.Root>
-      </DashboardLayout>
+      <Alert.Root status="info">
+        <Alert.Indicator />
+        <Alert.Content>
+          <Alert.Title>There's no data available.</Alert.Title>
+          <Alert.Description>
+            Start using the app to generate data to see the main stats here.
+          </Alert.Description>
+        </Alert.Content>
+      </Alert.Root>
     )
   }
 
   return (
-    <DashboardLayout>
+    <>
       <Heading mb="4">Statistics</Heading>
       <SimpleGrid columns={2} gap={6}>
         <UsersCountCard data={data} />
@@ -73,6 +68,6 @@ export const DashboardPage = () => {
 
       <Heading my="4">Recent Appointments</Heading>
       <RecentAppointmentsList recentAppointments={data.recentAppointments} />
-    </DashboardLayout>
+    </>
   )
 }
