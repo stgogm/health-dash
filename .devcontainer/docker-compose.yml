@@ -36,6 +36,8 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: pgadmin@example.com
       PGADMIN_DEFAULT_PASSWORD: pgadmin
+      PGADMIN_LISTEN_ADDRESS: '0.0.0.0'
+      PGADMIN_LISTEN_PORT: 5050
     network_mode: service:postgres
     volumes:
       - pgadmin-data:/tmp/dev/pgadmin/data
