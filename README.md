@@ -43,13 +43,61 @@ This project simulates a healthcare admin panel where doctors, patients, appoint
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/stgogm/health-dashboard.git
+git clone https://github.com/yourusername/health-dashboard.git
 ```
 
-### 2. Open on VSCode
+### 2. Start the dev containers
 
-VSCode should ask to open this project on a DevContainer. This will automatically setup everything (you need Docker installed).
+Using VSCode + DevContainers:
 
-### 3. Run and enjoy!
+- Open project in container
+- PostgreSQL + pgAdmin included in `docker-compose.yml`
 
-Use `pnpm pnpm dev:api` to start the API and `pnpm dev:app` to start the app. The ports are shown on the PORTS tab on your VSCode right panel.
+### 3. Seed the database
+
+```bash
+psql -U postgres -d postgres -f mock_data.sql
+```
+
+### 4. Run the backend
+
+```bash
+pnpm dev:api
+```
+
+Backend will be available at [http://localhost:3001](http://localhost:3001)
+
+### 5. Run the frontend
+
+```bash
+pnpm dev:app
+```
+
+Frontend will be available at [http://localhost:5174](http://localhost:5174)
+
+---
+
+## 📁 Project Structure
+
+```
+packages/
+  common/types/     # Shared TypeScript types
+platform/
+  api/              # NestJS + TypeORM backend
+  app/              # Vite + React frontend
+```
+
+---
+
+## 🧠 Why I Built This
+
+I created this dashboard to simulate a realistic fullstack environment, practice data modeling, and demonstrate software engineering best practices in a modern stack. It was designed with maintainability, reusability, and real-world team workflows in mind.
+
+---
+
+## 🧑‍💻 Author
+
+**Santiago "Momo" Marín**  
+Fullstack Engineer - Focused on clean architecture, DX, and product value
+
+[LinkedIn](https://linkedin.com/in/stgogm) · [GitHub](https://github.com/stgogm)
