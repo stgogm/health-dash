@@ -98,6 +98,6 @@ I created this dashboard to simulate a realistic fullstack environment, practice
 ## 🧑‍💻 Author
 
 **Santiago "Momo" Marín**  
-Fullstack Engineer - Focused on clean architecture, DX, and product value
+Fullstack Engineer - Focused on clean architecture, DX, and product value.
 
 [LinkedIn](https://linkedin.com/in/stgogm) · [GitHub](https://github.com/stgogm)
