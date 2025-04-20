@@ -2,6 +2,11 @@ import { ConfigModule, ConfigService } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { Module } from '@nestjs/common'
 
+import { AppointmentsModule } from './appointments/appointments.module'
+import { PatientsModule } from './patients/patients.module'
+import { DoctorsModule } from './doctors/doctors.module'
+import { LabsModule } from './labs/labs.module'
+
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
@@ -14,11 +19,15 @@ import { Module } from '@nestjs/common'
         password: config.get('DATABASE_PASS'),
         database: config.get('DATABASE_NAME'),
         host: config.get('DATABASE_HOST'),
+        autoLoadEntities: true,
         synchronize: true,
         type: 'postgres',
-        // entities: [...],
       }),
     }),
+    AppointmentsModule,
+    PatientsModule,
+    DoctorsModule,
+    LabsModule,
   ],
 })
 export class AppModule {}

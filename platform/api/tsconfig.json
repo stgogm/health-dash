@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
-    "moduleResolution": "Node",
+    "moduleResolution": "nodenext",
     "outDir": "./dist",
+    "module": "NodeNext",
     "target": "ESNext",
-    "module": "ESNext",
     "baseUrl": ".",
     "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "sourceMap": true,
