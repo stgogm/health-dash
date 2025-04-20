@@ -4,7 +4,7 @@
   "name": "NestJS+PostgreSQL+React",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "dockerComposeFile": "docker-compose.yml",
-  "service": "app",
+  "service": "platform",
 
   // This is only for GPG signing to work
   "mounts": [
