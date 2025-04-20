@@ -1,1 +1,5 @@
-export default {}
+export * from './appointments'
+export * from './dashboard'
+export * from './patients'
+export * from './doctors'
+export * from './labs'
