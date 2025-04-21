@@ -1,14 +1,9 @@
+import { SimpleGrid, Heading, Alert } from '@chakra-ui/react'
 import { DashboardSummaryDto } from '@common/types'
 import { fetcher } from '@/lib/fetcher'
 import useSWR from 'swr'
-import {
-  SimpleGrid,
-  Heading,
-  Spinner,
-  Center,
-  Alert,
-  Box,
-} from '@chakra-ui/react'
+
+import { FullscreenLoader } from '../common/components/FullscreenLoader'
 
 import { RecentAppointmentsList } from './components/RecentAppointmentsList'
 import { AppointmentsStatsCard } from './components/AppointmentsStatsCard'
@@ -23,13 +18,7 @@ export const DashboardPage = () => {
   )
 
   if (isLoading) {
-    return (
-      <Box pos="absolute" inset="0" bg="bg/80">
-        <Center h="full">
-          <Spinner size="xl" />
-        </Center>
-      </Box>
-    )
+    return <FullscreenLoader />
   }
 
   if (error) {

@@ -1,22 +1,9 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { DashboardPage } from '../dashboard/Dashboard.page'
+import { Outlet } from 'react-router-dom'
+
 import { AppLayout } from './App.layout'
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <DashboardPage />,
-  },
-  // {
-  //   path: '/doctors',
-  //   element: <DoctorsPage />,
-  // },
-])
-
-const App = () => (
+export const App = () => (
   <AppLayout>
-    <RouterProvider router={router} />
+    <Outlet />
   </AppLayout>
 )
-
-export default App
