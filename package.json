@@ -1,14 +1,14 @@
 {
-  "name": "health-dashboard",
-  "homepage": "https://github.com/stgogm/health-dashboard#readme",
+  "name": "health-dash",
+  "homepage": "https://github.com/stgogm/health-dash#readme",
   "private": true,
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stgogm/health-dashboard.git"
+    "url": "git+https://github.com/stgogm/health-dash.git"
   },
   "bugs": {
-    "url": "https://github.com/stgogm/health-dashboard/issues"
+    "url": "https://github.com/stgogm/health-dash/issues"
   },
   "engines": {
     "pnpm": ">=10.0.0",
@@ -16,6 +16,7 @@
   },
   "scripts": {
     "dev:api": "pnpm --filter api start:dev",
+    "dev:app": "pnpm --filter app start",
     "dev:web": "pnpm --filter web dev"
   }
 }
