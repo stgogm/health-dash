@@ -9,7 +9,7 @@ export const RecentAppointmentsList = ({
 }) => (
   <SimpleGrid columns={3} gap={6}>
     {recentAppointments.map((appointment) => (
-      <Card.Root>
+      <Card.Root key={appointment.id}>
         <Card.Body>
           <Text>
             <Text as="strong">
