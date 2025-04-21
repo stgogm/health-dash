@@ -23,6 +23,7 @@ import { LabsModule } from './labs/labs.module'
         autoLoadEntities: true,
         synchronize: true,
         type: 'postgres',
+        logging: true,
       }),
     }),
     AppointmentsModule,
