@@ -22,15 +22,12 @@ export class DoctorsService {
   async getDoctor(id: UUID) {
     const [result] = await this.doctors.query(
       `
-      SELECT d.*,
-             COUNT(DISTINCT p.id) AS patients,
-             COUNT(DISTINCT a.id) AS appointments
+      SELECT d.*, COUNT(DISTINCT p.id) AS patients, COUNT(DISTINCT a.id) AS appointments
       FROM doctors d
       LEFT JOIN appointments a ON a."doctorId" = d.id
       LEFT JOIN patients p ON p.id = a."patientId"
       WHERE d.id = $1
-      GROUP BY d.id, d."firstName", d."lastName"
-      LIMIT 1;
+      GROUP BY d.id;
       `,
       [id]
     )

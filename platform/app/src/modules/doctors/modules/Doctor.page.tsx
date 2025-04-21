@@ -1,16 +1,26 @@
-import type { DoctorDto } from '@common/types'
-import { Alert, Badge, Box, Card, Flex, Image, Text } from '@chakra-ui/react'
+import type { DoctorWithStatsDto } from '@common/types'
+import { useParams } from 'react-router'
 import useSWR from 'swr'
+import {
+  SimpleGrid,
+  Alert,
+  Badge,
+  Image,
+  Table,
+  Card,
+  Flex,
+  Text,
+  Box,
+} from '@chakra-ui/react'
 
 import { FullscreenLoader } from '@/modules/common/components/FullscreenLoader'
 import { useApiUrl } from '@/lib/apiUrl'
 import { fetcher } from '@/lib/fetcher'
-import { useParams } from 'react-router'
 
 export const DoctorPage = () => {
   const { id } = useParams()
   const apiUrl = useApiUrl()
-  const { data, error, isLoading } = useSWR<DoctorDto>(
+  const { data, error, isLoading } = useSWR<DoctorWithStatsDto>(
     `${apiUrl}/doctors/${id}`,
     fetcher
   )
@@ -43,7 +53,7 @@ export const DoctorPage = () => {
   }
 
   return (
-    <>
+    <SimpleGrid columns={2} gap="6">
       <Card.Root flexDirection="row" overflow="hidden">
         <Image
           src={`https://i.pravatar.cc/160?u=${data.id}`}
@@ -70,6 +80,22 @@ export const DoctorPage = () => {
           </Card.Body>
         </Box>
       </Card.Root>
-    </>
+      <Card.Root>
+        <Card.Body>
+          <Table.Root>
+            <Table.Body>
+              <Table.Row>
+                <Table.Cell>Appointments</Table.Cell>
+                <Table.Cell>{data.appointments}</Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell>Patients</Table.Cell>
+                <Table.Cell>{data.patients}</Table.Cell>
+              </Table.Row>
+            </Table.Body>
+          </Table.Root>
+        </Card.Body>
+      </Card.Root>
+    </SimpleGrid>
   )
 }
