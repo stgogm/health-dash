@@ -1,4 +1,4 @@
-# 🩺 Health Dashboard
+# 🩺 Health Dash
 
 A fullstack medical admin dashboard built with:
 
@@ -43,7 +43,7 @@ This project simulates a healthcare admin panel where doctors, patients, appoint
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/yourusername/health-dashboard.git
+git clone https://github.com/yourusername/health-dash.git
 ```
 
 ### 2. Start the dev containers
@@ -59,21 +59,21 @@ Using VSCode + DevContainers:
 psql -U postgres -d postgres -f mock_data.sql
 ```
 
-### 4. Run the backend
+### 4. Run the API
 
 ```bash
 pnpm dev:api
 ```
 
-Backend will be available at [http://localhost:3001](http://localhost:3001)
+The API will be available at [http://localhost:3001](http://localhost:3001)
 
-### 5. Run the frontend
+### 5. Run the webapp
 
 ```bash
-pnpm dev:app
+pnpm dev:web
 ```
 
-Frontend will be available at [http://localhost:5174](http://localhost:5174)
+The webapp will be available at [http://localhost:5174](http://localhost:5174)
 
 ---
 
@@ -83,8 +83,9 @@ Frontend will be available at [http://localhost:5174](http://localhost:5174)
 packages/
   common/types/     # Shared TypeScript types
 platform/
-  api/              # NestJS + TypeORM backend
-  app/              # Vite + React frontend
+  api/              # NestJS + TypeORM API
+  app/              # React Native + Expo app
+  web/              # Vite + React webapp
 ```
 
 ---
