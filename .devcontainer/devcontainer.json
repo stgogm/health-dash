@@ -15,12 +15,28 @@
   "features": {
     "ghcr.io/devcontainers-extra/features/nestjs-cli:2": {},
     "ghcr.io/devcontainers-extra/features/typescript:2": {},
-    "ghcr.io/devcontainers-extra/features/pnpm:2": {}
+    "ghcr.io/devcontainers-extra/features/pnpm:2": {},
+    "ghcr.io/devcontainers-extra/features/expo-cli:1": {}
   },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // This can be used to network with other containers or with the host.
-  "forwardPorts": [3000, 5173, 5050, 5432],
+  "forwardPorts": [
+    3000, // API
+    5173, // Webapp
+    5050, //pgAdmin
+    5432, // Postgres
+    8081, // App
+    19000, // Metro bundler
+    19001, // Metro fast refresh
+    19002 // Metro dev tools
+  ],
+
+  "portsAttributes": {
+    "19002": { "label": "Expo Dev Tools", "onAutoForward": "openBrowser" },
+    "19000": { "label": "Expo Metro", "onAutoForward": "openBrowser" },
+    "19001": { "label": "Expo Fast Refresh" }
+  },
 
   // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": "pnpm install",
