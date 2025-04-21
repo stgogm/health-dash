@@ -5,10 +5,10 @@ import { DashboardService } from './dashboard.service'
 
 @Controller('dashboard')
 export class DashboardController {
-  constructor(private readonly dashboardService: DashboardService) {}
+  constructor(private readonly service: DashboardService) {}
 
   @Get()
   async getDashboard(): Promise<DashboardSummaryDto> {
-    return this.dashboardService.getSummary()
+    return this.service.getSummary()
   }
 }
