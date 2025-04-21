@@ -1,6 +1,6 @@
 import { Badge, Card, Flex, Icon, SimpleGrid, Text } from '@chakra-ui/react'
 import { CalendarIcon, CheckCircleIcon } from 'lucide-react'
-import { RecentAppointmentDto } from '@common/types'
+import type { RecentAppointmentDto } from '@common/types'
 
 export const RecentAppointmentsList = ({
   recentAppointments,

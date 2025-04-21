@@ -1,5 +1,5 @@
 import { Box, Text, Icon, Button, Stack } from '@chakra-ui/react'
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router'
 import {
   BriefcaseMedicalIcon,
   LayoutDashboardIcon,

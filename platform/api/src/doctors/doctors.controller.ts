@@ -1,7 +1,8 @@
-import { Controller, Get, Query } from '@nestjs/common'
+import { Controller, Get, Param, Query } from '@nestjs/common'
+import type { UUID } from 'node:crypto'
 
 import { DoctorsService } from './doctors.service'
-import { Doctor } from './doctor.entity'
+import type { Doctor } from './doctor.entity'
 
 @Controller('doctors')
 export class DoctorsController {
@@ -9,9 +10,14 @@ export class DoctorsController {
 
   @Get()
   getDoctors(
-    @Query('take') take: number,
-    @Query('skip') skip: number
+    @Query('take') take = 18,
+    @Query('skip') skip = 0
   ): Promise<Doctor[]> {
     return this.service.getDoctors(take, skip)
+  }
+
+  @Get(':id')
+  getDoctor(@Param('id') id: UUID) {
+    return this.service.getDoctor(id)
   }
 }

@@ -1,9 +1,9 @@
 import { SimpleGrid, Heading, Alert } from '@chakra-ui/react'
-import { DashboardSummaryDto } from '@common/types'
-import { fetcher } from '@/lib/fetcher'
+import type { DashboardSummaryDto } from '@common/types'
 import useSWR from 'swr'
 
-import { FullscreenLoader } from '../common/components/FullscreenLoader'
+import { FullscreenLoader } from '@/modules/common/components/FullscreenLoader'
+import { fetcher } from '@/lib/fetcher'
 
 import { RecentAppointmentsList } from './components/RecentAppointmentsList'
 import { AppointmentsStatsCard } from './components/AppointmentsStatsCard'
