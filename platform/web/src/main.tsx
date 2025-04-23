@@ -5,7 +5,7 @@ import { createRoot } from 'react-dom/client'
 import { StrictMode } from 'react'
 
 import { DashboardPage } from './modules/dashboard/Dashboard.page'
-import { DoctorPage } from './modules/doctors/modules/Doctor.page'
+import { DoctorPage } from './modules/doctors/modules/doctor/Doctor.page'
 import { DoctorsPage } from './modules/doctors/Doctors.page'
 import { App } from './modules/app/App'
 

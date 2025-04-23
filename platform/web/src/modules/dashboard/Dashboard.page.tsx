@@ -1,19 +1,18 @@
-import { SimpleGrid, Heading, Alert } from '@chakra-ui/react'
 import type { DashboardSummaryDto } from '@common/types'
+import { SimpleGrid, Heading } from '@chakra-ui/react'
 import useSWR from 'swr'
 
-import { FullscreenLoader } from '@/modules/common/components/FullscreenLoader'
+import { FullscreenLoader, SimpleAlert } from '@/modules/common/components'
+import { getApiUrl } from '@/lib/apiUrl'
 import { fetcher } from '@/lib/fetcher'
 
 import { RecentAppointmentsList } from './components/RecentAppointmentsList'
 import { AppointmentsStatsCard } from './components/AppointmentsStatsCard'
 import { UsersCountCard } from './components/UsersCountCard'
 
-const apiUrl = import.meta.env.VITE_API_URL
-
 export const DashboardPage = () => {
   const { data, error, isLoading } = useSWR<DashboardSummaryDto>(
-    `${apiUrl}/dashboard`,
+    getApiUrl('dashboard'),
     fetcher
   )
 
@@ -23,27 +22,21 @@ export const DashboardPage = () => {
 
   if (error) {
     return (
-      <Alert.Root status="error">
-        <Alert.Indicator />
-        <Alert.Content>
-          <Alert.Title>Failed to load dashboard data.</Alert.Title>
-          <Alert.Description>{error.message}</Alert.Description>
-        </Alert.Content>
-      </Alert.Root>
+      <SimpleAlert
+        title="Failed to load dashboard data."
+        message={error.message}
+        status="error"
+      />
     )
   }
 
   if (!data) {
     return (
-      <Alert.Root status="info">
-        <Alert.Indicator />
-        <Alert.Content>
-          <Alert.Title>There's no data available.</Alert.Title>
-          <Alert.Description>
-            Start using the app to generate data to see the main stats here.
-          </Alert.Description>
-        </Alert.Content>
-      </Alert.Root>
+      <SimpleAlert
+        message="Start using the app to generate data to see the main stats here."
+        title="There's no data available."
+        status="info"
+      />
     )
   }
 

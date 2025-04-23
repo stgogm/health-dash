@@ -1,4 +1,4 @@
-export const fetcher = (url: string) =>
+export const fetcher = (url: URL | string) =>
   fetch(url).then((res) => {
     if (!res.ok) {
       console.error(res)
