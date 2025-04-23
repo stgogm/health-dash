@@ -28,7 +28,7 @@ export const DoctorsPage = () => {
     )
   }
 
-  if (!data) {
+  if (!data || data.length < 1) {
     return <SimpleAlert title="There are no doctors available." />
   }
 

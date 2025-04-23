@@ -6,6 +6,7 @@ import useSWR from 'swr'
 import { FullscreenLoader, SimpleAlert } from '@/modules/common/components'
 import { getApiUrl } from '@/lib/apiUrl'
 import { fetcher } from '@/lib/fetcher'
+
 import { DoctorDetailsCard } from './components/DoctorDetailsCard'
 import { DoctorStatsCard } from './components/DoctorStatsCard'
 
@@ -35,7 +36,7 @@ export const DoctorPage = () => {
   }
 
   if (!data) {
-    return <SimpleAlert title="Could not get doctor's data." status="error" />
+    return <SimpleAlert title="Could not get doctor's data." status="warning" />
   }
 
   return (
