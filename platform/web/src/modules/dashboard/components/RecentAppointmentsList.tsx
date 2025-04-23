@@ -2,11 +2,11 @@ import { Badge, Card, Flex, Icon, SimpleGrid, Text } from '@chakra-ui/react'
 import { CalendarIcon, CheckCircleIcon } from 'lucide-react'
 import type { RecentAppointmentDto } from '@common/types'
 
-export const RecentAppointmentsList = ({
-  recentAppointments,
-}: {
+interface Props {
   recentAppointments: RecentAppointmentDto[]
-}) => (
+}
+
+export const RecentAppointmentsList = ({ recentAppointments }: Props) => (
   <SimpleGrid columns={3} gap={6}>
     {recentAppointments.map((appointment) => (
       <Card.Root key={appointment.id}>

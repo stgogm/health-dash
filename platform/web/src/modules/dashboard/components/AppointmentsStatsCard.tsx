@@ -1,11 +1,11 @@
 import type { AppointmentsStats } from '@common/types'
 import { Card, Table } from '@chakra-ui/react'
 
-export const AppointmentsStatsCard = ({
-  appointmentsStats,
-}: {
+interface Props {
   appointmentsStats: AppointmentsStats
-}) => (
+}
+
+export const AppointmentsStatsCard = ({ appointmentsStats }: Props) => (
   <Card.Root>
     <Card.Header fontWeight="bold">Appointments</Card.Header>
     <Card.Body>

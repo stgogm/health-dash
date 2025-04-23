@@ -1,11 +1,13 @@
 import type { DashboardSummaryDto } from '@common/types'
 import { Card, Table } from '@chakra-ui/react'
 
+interface Props {
+  data: DashboardSummaryDto
+}
+
 export const UsersCountCard = ({
   data: { doctorsCount, patientsCount },
-}: {
-  data: DashboardSummaryDto
-}) => (
+}: Props) => (
   <Card.Root>
     <Card.Header fontWeight="bold">Users</Card.Header>
     <Card.Body>
