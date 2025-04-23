@@ -5,5 +5,5 @@ export const getApiUrl = (pathname: string | string[] = '') => {
 
   url.pathname = Array.isArray(pathname) ? pathname.join('/') : pathname
 
-  return url
+  return url.href
 }
