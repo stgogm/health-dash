@@ -8,7 +8,7 @@ interface Props {
 export const UsersCountCard = ({
   data: { doctorsCount, patientsCount },
 }: Props) => (
-  <Card.Root>
+  <Card.Root variant="elevated">
     <Card.Header fontWeight="bold">Users</Card.Header>
     <Card.Body>
       <Table.Root>

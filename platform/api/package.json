@@ -1,5 +1,5 @@
 {
-  "name": "health-dash-api",
+  "name": "api",
   "version": "1.0.0",
   "description": "NestJS+PostgreSQL Practice",
   "main": "dist/src/main",

@@ -15,8 +15,8 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "dev:api": "pnpm --filter health-dash-api start:dev",
-    "dev:app": "pnpm --filter health-dash-app start",
-    "dev:web": "pnpm --filter health-dash-web dev"
+    "dev:api": "pnpm --filter api start:dev",
+    "dev:app": "pnpm --filter app start",
+    "dev:web": "pnpm --filter web dev"
   }
 }
