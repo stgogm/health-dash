@@ -10,8 +10,9 @@ export const DoctorDetailsCard = ({ doctor }: Props) => (
     <Image
       src={`https://i.pravatar.cc/300?u=${doctor.id}`}
       alt={`${doctor.firstName} ${doctor.lastName}`}
+      aspectRatio="square"
       objectFit="cover"
-      maxW="200px"
+      maxW="15em"
     />
     <Box>
       <Card.Body>

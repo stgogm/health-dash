@@ -9,7 +9,7 @@ import {
 
 export const Sidebar = () => {
   return (
-    <Box bg="white" boxShadow="md" p="4" as="nav">
+    <Box bg="white" boxShadow="md" p="4" as="nav" position="relative">
       <Text fontWeight="bold" fontSize="xl" mb="4">
         Welcome!
       </Text>
