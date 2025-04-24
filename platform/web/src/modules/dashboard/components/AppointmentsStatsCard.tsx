@@ -31,10 +31,10 @@ export const AppointmentsStatsCard = ({ appointmentsStats }: Props) => {
               dataKey={chart.key('value')}
               outerRadius={100}
               data={chart.data}
+              labelLine={false}
               paddingAngle={8}
               cornerRadius={4}
               innerRadius={80}
-              labelLine={false}
               label={{
                 fill: chart.color('text'),
               }}
